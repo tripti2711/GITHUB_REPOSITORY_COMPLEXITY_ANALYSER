@@ -27,16 +27,11 @@ exclude_config = read_exclude_config('exclude_config.yaml')
 skip_files_extensions = exclude_config.get('skip_files_extensions', [])
 skip_files_patterns = exclude_config.get('skip_files_patterns', [])
 
-def repository_complexity_evaluation(github_url):
-    url = f"https://api.github.com/users/{github_url}/repos"
-    response = requests.get(url)
-    if response.status_code == 200:
-        repositories = response.json()
-    else:
-        repositories = None
-    if repositories is None:
-        print(" no repo to evaluate")
-        return
+def repository_complexity_evaluation(username):
+    # Make the API request to fetch repositories
+    response = requests.get(f'https://api.github.com/users/{username}/repos')
+    repositories = response.json()
+    
     max_complexity_score=0
     most_complex_reason=''
     most_complex_repo= None
