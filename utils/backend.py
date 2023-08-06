@@ -12,10 +12,8 @@ from langchain.langchain import LangChain
 def calculate_complexity_score(text):
     # Initialize LangChain
     langchain = LangChain()
-
     # Evaluate the technical complexity using LangChain
     complexity_score = langchain.evaluate_complexity(text)
-
     return complexity_score
     
 # Function to read the exclude configuration from the YAML file
