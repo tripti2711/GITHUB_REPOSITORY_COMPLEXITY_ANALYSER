@@ -1,4 +1,4 @@
-ITHUB_REPOSITORY_COMPLEXITY_ANALYSER
+## GITHUB_REPOSITORY_COMPLEXITY_ANALYSER
 A Python-based tool that aims to identify the most technically complex and challenging repository from a GitHub user's profile. The tool functions by taking a GitHub user's URL as input and then utilizes the power of GPT (Generative Pre-trained Transformer) and LangChain. The process involves assessing each repository individually to determine its technical complexity.
 
 Backend Logic
