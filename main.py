@@ -15,11 +15,11 @@ def index():
 @app.route('/analyze', methods=['POST'])
 def analyze():
     # Get the GitHub url from the form data
-    github_url = request.form['githubUrl']
+    github_url = request.form['username']
 
     try:
         # Fetch user repositories
-        most_complex_repo, score, reason = repository_complexity_evaluation(github_url)
+        most_complex_repo, score, reason = repository_complexity_evaluation(username)
         print(most_complex_repo,score,reason)
         return render_template('result.html', repository=most_complex_repo, score=score, reason=reason)
 
