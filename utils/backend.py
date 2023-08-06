@@ -8,6 +8,16 @@ import tiktoken
 import yaml
 from langchain.langchain import LangChain
 
+#function to claculate score
+def calculate_complexity_score(text):
+    # Initialize LangChain
+    langchain = LangChain()
+
+    # Evaluate the technical complexity using LangChain
+    complexity_score = langchain.evaluate_complexity(text)
+
+    return complexity_score
+    
 # Function to read the exclude configuration from the YAML file
 def read_exclude_config(file_path):
     with open(file_path, 'r') as config_file:
